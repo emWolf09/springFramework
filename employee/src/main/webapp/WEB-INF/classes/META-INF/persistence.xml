@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence 
+    http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="JPA_CRUD" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<class>com.infy.entity.EmployeeEntity</class>
+		<class>com.infy.entity.AddressEntity</class>
+		<properties>
+			<!-- Configuring MYSQL properties -->
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+			<property name="javax.persistence.jdbc.drive" value="com.mysql.cj.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/db1" />
+			<property name="javax.persistence.jdbc.user" value="root" />
+			<property name="javax.persistence.jdbc.password" value="misterWOLF@1997" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value = "true" />
+			<property name="hibernate.use_sql_comments" value = "true" />
+			
+			<property name="hibernate.cache.use_second_level_cache" value="true"/>
+			<property name="hibernate.cache.region.factory_class" value="org.hibernate.cache.ehcache.EhCacheRegionFactory"/>
+			<property name="hibernate.javax.cache.provider" value="net.sf.ehcache.hibernate.EhCacheProvider"/>
+			<property name="hibernate.generate_statistics" value="true"/>
+		</properties>
+	</persistence-unit>
+</persistence>
